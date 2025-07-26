@@ -79,10 +79,9 @@ export const EmailProvider = ({ children }) => {
     setIsMessagesLoading(true);
     setMessagesError(null);
     try {
-      const emailCookie = Cookies.get("Email");
       const req = await fetch(
         `${
-          process.env.NEXT_PUBLIC_API_URL}/api/message/inbox/${encodeURIComponent(emailCookie)}`,
+          process.env.NEXT_PUBLIC_API_URL}/api/message/inbox/email`,
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
