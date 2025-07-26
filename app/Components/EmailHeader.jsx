@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Mail, Copy, RefreshCw, Trash2 } from "lucide-react";
+import { Mail, Copy, RefreshCw, Trash2, Check } from "lucide-react";
 import { useEmail } from "../context/EmailContext";
 import Delete from "./Delete";
 import Renew from "./Renew";
@@ -15,10 +15,10 @@ const EmailHeader = ({ onChange, onRenew, onDelete }) => {
     isGetDetailsLoading: loading,
     getDetailsError: error,
     getMessages,
-    
   } = useEmail();
   const [isOpen, setIsOpen] = useState(false);
   const [remainingMs, setRemainingMs] = useState(0);
+  const [isCopySuccess, setIsCopySuccess] = useState(false);
 
   useEffect(() => {
     getDetails();
@@ -36,9 +36,7 @@ const EmailHeader = ({ onChange, onRenew, onDelete }) => {
   }, [createdAt, expiresAt]);
 
   const totalDuration =
-    createdAt && expiresAt
-      ? expiresAt.getTime() - createdAt.getTime()
-      : 0;
+    createdAt && expiresAt ? expiresAt.getTime() - createdAt.getTime() : 0;
   const percentage =
     totalDuration > 0 ? (remainingMs / totalDuration) * 100 : 0;
   const formatTime = (ms) => {
@@ -49,14 +47,15 @@ const EmailHeader = ({ onChange, onRenew, onDelete }) => {
     return h > 0 ? `${h}h ${m}m ${s}s` : `${m}m ${s}s`;
   };
 
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(email);
+    setIsCopySuccess(true);
+  };
+
   return (
     <div className="w-full bg-white shadow-lg rounded-2xl p-6 grid md:grid-cols-3 gap-6">
       {/* Custom Email Modal */}
-      {isOpen && (
-        <CustomEmail
-          onClose={() => setIsOpen(false)}
-        />
-      )}
+      {isOpen && <CustomEmail onClose={() => setIsOpen(false)} />}
 
       {/* Header */}
       {/* Logo */}
@@ -77,12 +76,21 @@ const EmailHeader = ({ onChange, onRenew, onDelete }) => {
           <>
             <div className="flex items-center justify-between">
               <p className="break-all">{email}</p>
-              <button
-                onClick={() => navigator.clipboard.writeText(email)}
-                className="p-2 bg-white rounded-full shadow hover:bg-gray-100"
-              >
-                <Copy size={18} />
-              </button>
+              {isCopySuccess ? (
+                <button
+                  onClick={copyToClipboard}
+                  className="p-2 bg-white rounded-full shadow hover:bg-gray-100"
+                >
+                  <Check size={18} className="text-green-600" />
+                </button>
+              ) : (
+                <button
+                  onClick={copyToClipboard}
+                  className="p-2 bg-white rounded-full shadow hover:bg-gray-100"
+                >
+                  <Copy size={18} />
+                </button>
+              )}
             </div>
             <div className="flex space-x-2 mt-4">
               <button
