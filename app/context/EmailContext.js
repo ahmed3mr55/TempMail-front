@@ -81,7 +81,7 @@ export const EmailProvider = ({ children }) => {
     try {
       const req = await fetch(
         `${
-          process.env.NEXT_PUBLIC_API_URL}/api/message/inbox/email`,
+          process.env.NEXT_PUBLIC_API_URL}/api/message/inbox/messages/email`,
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
