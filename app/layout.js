@@ -32,6 +32,9 @@ export const metadata = {
       "Free temporary email addresses—no signup required, auto‑delete in up to 24h. Perfect for privacy, spam avoidance, and quick testing.",
     images: ["https://misho.cfd/twitter-card.png"],
   },
+  verification: {
+    google: "YafA4fz1sulMQKC4YVRLD9mSLh9gtZt9nPHGaxU7DAc",
+  }
 };
 
 export default function RootLayout({ children }) {
