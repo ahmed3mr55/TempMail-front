@@ -16,3 +16,16 @@ body {
   background: #fff;
   font-family: sans-serif, arial;
 }
+
+.zoom0 {
+  font-size: 0.75rem;
+}
+.zoom1 {
+  font-size: 1.5rem;
+}
+.zoom2 {
+  font-size: 2.25rem;
+}
+.zoom3 {
+  font-size: 3rem;
+}
