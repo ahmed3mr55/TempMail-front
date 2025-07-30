@@ -1,11 +1,7 @@
 "use client";
 import CreateMail from "./Components/CreateMail";
-import { logReferrerInfo } from "./Components/referrer";
 
 export default function Home() {
-
-  logReferrerInfo();
-
   return (
     <div className="min-h-screen p-4">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
