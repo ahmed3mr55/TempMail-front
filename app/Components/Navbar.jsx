@@ -29,7 +29,7 @@ const Navbar = () => {
         </div>
 
         {/* Action Button */}
-        <div className="hidden sm:block">
+        <div>
           <button 
             onClick={() => setIsOpen(true)}
             className="bg-blue-600 cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
