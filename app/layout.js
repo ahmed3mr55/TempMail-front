@@ -3,13 +3,13 @@ import Navbar from "./Components/Navbar";
 import { EmailProvider } from "./context/EmailContext";
 
 export const metadata = {
-  title: "Misho Temp Email – Instant Disposable Email Inbox",
+  title: "Misho Temp Email – Free Temporary Email with Cross-Device Login",
   description:
-    "Generate a secure, temporary email address in seconds—perfect for sign‑ups, testing, and protecting your privacy. Free, no sign‑up, auto‑expires in up to 24 hours.",
+    "Create a secure, free temporary email address in seconds. Access your disposable inbox from any device, perfect for sign-ups, testing, and avoiding spam. No registration required—expires in 1h to 30 days.",
   openGraph: {
-    title: "Misho Temp Email – Instant Disposable Email Inbox",
+    title: "Misho Temp Email – Free Temporary Email with Cross-Device Login",
     description:
-      "Get a free, secure disposable email address in seconds. Perfect for one‑time sign‑ups, QA testing, and staying spam‑free. Auto‑expires up to 24h—no registration needed.",
+      "Generate a free, secure disposable email in seconds and access it from any device. Ideal for one-time sign-ups, QA testing, and staying spam-free. Auto-expires in 1h to 30 days—no signup needed.",
     url: "https://misho.cfd/",
     siteName: "Misho Temp Email",
     images: [
@@ -17,7 +17,7 @@ export const metadata = {
         url: "https://misho.cfd/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Misho Temp Email",
+        alt: "Misho Temp Email – Cross-Device Disposable Inbox",
       },
     ],
     locale: "en_US",
@@ -26,14 +26,14 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@misho_temp",
-    title: "Misho Temp Email – Instant Disposable Email Inbox",
+    title: "Misho Temp Email – Free Disposable Email with Cross-Device Access",
     description:
-      "Free temporary email addresses—no signup required, auto‑delete in up to 24h. Perfect for privacy, spam avoidance, and quick testing.",
+      "Free temporary email addresses with secure cross-device login. No signup, spam-proof, and expires in 1h–30 days. Perfect for privacy, testing, and quick sign-ups.",
     images: ["https://misho.cfd/twitter-card.png"],
   },
   verification: {
     google: "YafA4fz1sulMQKC4YVRLD9mSLh9gtZt9nPHGaxU7DAc",
-  }
+  },
 };
 
 export default function RootLayout({ children }) {
