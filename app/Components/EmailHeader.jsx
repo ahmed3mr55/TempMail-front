@@ -1,12 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Mail, Copy, RefreshCw, Trash2, Check } from "lucide-react";
+import { Mail, Copy, RefreshCw, Trash2, Check, KeyRound } from "lucide-react";
 import { useEmail } from "../context/EmailContext";
 import Delete from "./Delete";
 import Renew from "./Renew";
 import CustomEmail from "./CustomEmail";
+import EmailKay from "./EmailKay";
 
-const EmailHeader = ({ onChange, onRenew, onDelete }) => {
+const EmailHeader = () => {
   const {
     email,
     createdAt,
@@ -76,21 +77,25 @@ const EmailHeader = ({ onChange, onRenew, onDelete }) => {
           <>
             <div className="flex items-center justify-between">
               <p className="break-all">{email}</p>
-              {isCopySuccess ? (
-                <button
-                  onClick={copyToClipboard}
-                  className="p-2 bg-white rounded-full shadow hover:bg-gray-100"
-                >
-                  <Check size={18} className="text-green-600" />
-                </button>
-              ) : (
-                <button
-                  onClick={copyToClipboard}
-                  className="p-2 bg-white rounded-full shadow hover:bg-gray-100"
-                >
-                  <Copy size={18} />
-                </button>
-              )}
+              <div className="flex space-x-2">
+                {isCopySuccess ? (
+                  <button
+                    onClick={copyToClipboard}
+                    className="p-2 bg-white rounded-full shadow hover:bg-gray-100"
+                  >
+                    <Check size={18} className="text-green-600" />
+                  </button>
+                ) : (
+                  <button
+                    onClick={copyToClipboard}
+                    className="p-2 bg-white rounded-full shadow hover:bg-gray-100"
+                  >
+                    <Copy size={18} />
+                  </button>
+                )}
+
+                <EmailKay />
+              </div>
             </div>
             <div className="flex space-x-2 mt-4">
               <button

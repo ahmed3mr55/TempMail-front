@@ -6,6 +6,7 @@ const EmailContext = createContext();
 
 export const EmailProvider = ({ children }) => {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [isEmailLoading, setIsEmailLoading] = useState(false);
   const [emailError, setEmailError] = useState(null);
@@ -43,6 +44,7 @@ export const EmailProvider = ({ children }) => {
       }
       setIsEmailValid(true);
       setEmail(res.email);
+      setPassword(res.password);
       console.log("Generated Email:", res.email);
     } catch (error) {
       setEmailError("Failed to generate email. Please try again.");
@@ -66,6 +68,7 @@ export const EmailProvider = ({ children }) => {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed to load");
       setEmail(data.email);
+      setPassword(data.password);
       setCreatedAt(new Date(data.createdAt));
       setExpiresAt(new Date(data.expiresAt));
       setInboxEmail(data.email);
@@ -121,6 +124,7 @@ export const EmailProvider = ({ children }) => {
         messages,
         messagesError,
         isMessagesLoading,
+        password
       }}
     >
       {children}
