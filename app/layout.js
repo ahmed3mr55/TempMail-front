@@ -1,4 +1,3 @@
-// app/layout.jsx (or RootLayout.jsx)
 import "./globals.css";
 import Navbar from "./Components/Navbar";
 import { EmailProvider } from "./context/EmailContext";

@@ -64,9 +64,13 @@ const CreateMail = () => {
               <option value="30m">30 minutes(default)</option>
               <option value="1h">1 hour</option>
               <option value="2h">2 hours</option>
-              <option value="4h">4 hours</option>
               <option value="12h">12 hours</option>
               <option value="1d">24 hours</option>
+              <option value="3d">3 days</option>
+              <option value="7d">7 days</option>
+              <option value="14d">14 days</option>
+              <option value="21d">21 days</option>
+              <option value="30d">30 days</option>
             </select>
           </div>
         </main>

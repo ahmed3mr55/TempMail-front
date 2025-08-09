@@ -1,9 +1,13 @@
 "use client";
 import React from "react";
+import { useState } from "react";
 import { Mail } from "lucide-react";
+import Login from "./Login";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
+    <>
     <nav className="fixed top-0 left-0 w-full py-4 bg-white shadow-lg z-20">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo & Title */}
@@ -26,12 +30,11 @@ const Navbar = () => {
 
         {/* Action Button */}
         <div className="hidden sm:block">
-          <a
-            href="/"
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-          >
-            Create Email
-          </a>
+          <button 
+            onClick={() => setIsOpen(true)}
+            className="bg-blue-600 cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+            Login
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -55,6 +58,11 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+    {/* modal */}
+    {isOpen && (
+      <Login onClose={() => setIsOpen(false)} />
+    )}
+    </>
   );
 };
 
