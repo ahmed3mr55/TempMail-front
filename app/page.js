@@ -7,7 +7,7 @@ export default function Home() {
         {/* Left Sidebar */}
         <aside className="hidden md:block col-span-1 sticky top-4">
           <div className="bg-white p-4 space-y-4">
-            <h3 className="text-xl font-bold text-gray-800">Key Features</h3>
+            <h2 className="text-xl font-bold text-gray-800">Key Features</h2>
             <ol className="list-decimal list-inside space-y-2 text-gray-600 text-sm">
               <li>
                 <span className="font-semibold">Instant Inbox Access</span> – Ready in seconds, no delays.
