@@ -1,3 +1,6 @@
+export const runtime = 'edge';
+export const revalidate = 60 * 60 * 24 * 7;
+
 import CreateMail from "./Components/CreateMail";
 
 export default function Home() {
