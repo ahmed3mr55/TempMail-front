@@ -1,4 +1,3 @@
-export const runtime = "edge";
 export const revalidate = 604800;
 
 import CreateMail from "./Components/CreateMail";
